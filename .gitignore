@@ -1,0 +1,15 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# OpenLane / OpenROAD run artifacts (if you ever run the flow locally here)
+runs/
+*.log
+*.rpt
+
+# Common EDA scratch files
+*.vcd
+*.fst
+*.gtkw.bak

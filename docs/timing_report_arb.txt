@@ -1,0 +1,65 @@
+Startpoint: _139_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: _139_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _139_/C (DFCL11)
+   2.14    2.14 ^ _139_/Q (DFCL11)
+   0.41    2.55 v _110_/OUT1 (NND201)
+   0.58    3.12 ^ _112_/OUT1 (ORND01)
+   0.00    3.12 ^ _139_/D (DFCL11)
+           3.12   data arrival time
+
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _139_/C (DFCL11)
+   0.09    0.09   library hold time
+           0.09   data required time
+---------------------------------------------------------
+           0.09   data required time
+          -3.12   data arrival time
+---------------------------------------------------------
+           3.03   slack (MET)
+
+
+Startpoint: _135_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: _137_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _135_/C (DFCL11)
+   3.30    3.30 v _135_/QB (DFCL11)
+   2.03    5.33 ^ _075_/OUT1 (ORND01)
+   2.38    7.71 v _080_/OUT1 (XNR201)
+   1.45    9.17 v _087_/OUT1 (OR3101)
+   0.83   10.00 ^ _088_/OUT1 (ADNR01)
+   0.79   10.79 v _102_/OUT1 (ADNR01)
+   1.47   12.26 v _104_/OUT1 (OR2101)
+   1.17   13.44 v _120_/OUT1 (AND501)
+   1.64   15.08 v _123_/OUT1 (XNR201)
+   0.78   15.86 ^ _124_/OUT1 (NOR200)
+   0.00   15.86 ^ _137_/D (DFCL11)
+          15.86   data arrival time
+
+  20.00   20.00   clock CLK (rise edge)
+   0.00   20.00   clock network delay (ideal)
+   0.00   20.00   clock reconvergence pessimism
+          20.00 ^ _137_/C (DFCL11)
+  -1.06   18.94   library setup time
+          18.94   data required time
+---------------------------------------------------------
+          18.94   data required time
+         -15.86   data arrival time
+---------------------------------------------------------
+           3.08   slack (MET)
+
+

@@ -1,0 +1,59 @@
+Startpoint: _105_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: _106_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _105_/C (DFFL11)
+   2.21    2.21 ^ _105_/Q (DFFL11)
+   0.69    2.90 v _055_/OUT1 (NOR200)
+   1.38    4.28 ^ _056_/OUT1 (NOR300)
+   0.00    4.28 ^ _106_/D (DFFL11)
+           4.28   data arrival time
+
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _106_/C (DFFL11)
+   0.10    0.10   library hold time
+           0.10   data required time
+---------------------------------------------------------
+           0.10   data required time
+          -4.28   data arrival time
+---------------------------------------------------------
+           4.19   slack (MET)
+
+
+Startpoint: _119_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: _116_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _119_/C (DFFL11)
+   2.44    2.44 v _119_/Q (DFFL11)
+   2.55    4.99 ^ _057_/OUT1 (XOR201)
+   1.97    6.96 v _092_/OUT1 (XNR201)
+   1.01    7.97 ^ _095_/OUT1 (ADNR01)
+   0.00    7.97 ^ _116_/D (DFFL11)
+           7.97   data arrival time
+
+  20.00   20.00   clock CLK (rise edge)
+   0.00   20.00   clock network delay (ideal)
+   0.00   20.00   clock reconvergence pessimism
+          20.00 ^ _116_/C (DFFL11)
+  -0.69   19.31   library setup time
+          19.31   data required time
+---------------------------------------------------------
+          19.31   data required time
+          -7.97   data arrival time
+---------------------------------------------------------
+          11.34   slack (MET)
+
+
