@@ -26,10 +26,17 @@ by running my design through the flow.
 
 ## Results
 
-| Module | Cells (synth) | Flip-flops | Setup slack | Fmax |
-|---|---|---|---|---|
-| Arbitration | 66 | 8 | 3.08 ns (MET) | ~63 MHz |
-| CRC | 21 | 15 | 11.34 ns (MET) | ~125 MHz |
+| Module | Cells (post-synthesis) | Cells (post-route) | Flip-flops | Setup slack (pre-layout) | Fmax (slack-implied) |
+|---|---|---|---|---|---|
+| Arbitration | 72 | 75 | 8 | 3.08 ns (MET) | ~59 MHz |
+| CRC | 67 | 70 | 15 | 11.34 ns (MET) | ~115 MHz |
+
+Cell counts are instance counts from the netlists in `synthesis/` and
+`post_route/`. Fmax is derived from slack against the 20 ns constraint
+(20 ns minus setup slack), so it includes library setup time. The
+timing reports in `docs/` are the pre-layout reports; post-parasitic-extraction
+setup/hold slack was +3.05/+3.01 ns (Arbitration) and +11.09/+4.04 ns (CRC),
+implying ~59 MHz and ~112 MHz.
 
 Clock constraint: 50 MHz (20 ns period) for both blocks. Full timing
 breakdown in [`docs/timing_tables.md`](docs/timing_tables.md) and the
@@ -51,7 +58,7 @@ completed successfully.
 |---|---|
 | ![crc layout](docs/layout/crc_layout.png) | ![crc routing](docs/routing/crc_routing.png) |
 
-The core area is larger than the design strictly needs (66 and 21
+The core area is larger than the design strictly needs (75 and 70
 cells are small blocks) — a direct consequence of enlarging the core
 to achieve placement convergence, not a routing failure. Routing
 completed with no open nets.

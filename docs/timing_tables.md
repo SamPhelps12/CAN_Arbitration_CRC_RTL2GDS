@@ -10,7 +10,8 @@ Clock constraint: **50 MHz (20 ns period)** for both blocks.
 | Setup slack | 3.08 ns (MET) | 11.34 ns (MET) |
 | Min path delay | 3.12 ns | 4.28 ns |
 | Hold slack | 3.03 ns (MET) | 4.19 ns (MET) |
-| Achievable Fmax (1 / critical path) | ~63 MHz | ~125 MHz |
+| Achievable Fmax (20 ns - setup slack) | ~59 MHz | ~115 MHz |
+| Library setup time | 1.06 ns | 0.69 ns |
 
 Both blocks close timing comfortably against the 50 MHz target — the generous
 slack reflects a modest constraint choice, not a maximally-pushed design;
@@ -40,3 +41,12 @@ loose or uncharacterized timing data.
 
 Full un-redacted reports with complete path breakdowns are in
 `timing_report_arb.txt` and `timing_report_crc.txt`.
+
+## Note on Fmax
+
+Fmax is computed as 1 / (period - setup slack), which includes the library
+setup time of the capturing flip-flop. Dividing 1 by the data arrival time
+alone would overstate it (~63 MHz / ~125 MHz). Post-extraction slack
+(+3.05 ns Arbitration, +11.09 ns CRC) implies ~59 MHz and ~112 MHz.
+These are slack-implied estimates at a 50 MHz constraint, not measured
+maximum-frequency runs.
